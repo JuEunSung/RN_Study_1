@@ -15,7 +15,7 @@ import ComponentWrapper from './ComponentWrapper';
 
 import style from './style';
 
-export default class App extends React.Component {
+class App extends React.Component {
   componentDidMount() {}
 
   render() {
@@ -28,3 +28,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default App;
