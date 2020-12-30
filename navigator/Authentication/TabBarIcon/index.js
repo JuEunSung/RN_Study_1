@@ -12,7 +12,7 @@ class TabBarIcon extends React.Component {
     const { routeName, color, isFocused } = this.props.$data;
 
     return (
-      <View style={style.icon}>
+      <View style={[style.icon, isFocused ? style.focusIcon : {}]}>
         <View style={[style.icon_box, isFocused ? style.focusTab : {}]}>
           <Image
             source={this.getImage()}

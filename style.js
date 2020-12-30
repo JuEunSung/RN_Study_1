@@ -1,10 +1,16 @@
 import { StyleSheet } from 'react-native';
 
+import { MAIN_BACKGROUND_COLOR } from './constant';
+
 export default StyleSheet.create({
-  wrappedSafeAreaView: {
+  authenticationSafeAreaView: {
     flex: 1,
   },
-  componentWrapperView: {
+  noauthenticationSafeAreaView: {
+    flex: 1,
+    backgroundColor: MAIN_BACKGROUND_COLOR,
+  },
+  appEntryView: {
     flex: 1,
   },
 });

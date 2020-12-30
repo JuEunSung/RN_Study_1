@@ -7,23 +7,16 @@
  */
 
 import React from 'react';
-import { SafeAreaView } from 'react-native';
 
 import { MainProvider } from './context';
 
-import ComponentWrapper from './ComponentWrapper';
-
-import style from './style';
+import AppEntry from './AppEntry';
 
 class App extends React.Component {
-  componentDidMount() {}
-
   render() {
     return (
       <MainProvider>
-        <SafeAreaView style={style.wrappedSafeAreaView}>
-          <ComponentWrapper />
-        </SafeAreaView>
+        <AppEntry />
       </MainProvider>
     );
   }

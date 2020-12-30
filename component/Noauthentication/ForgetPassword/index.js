@@ -1,9 +1,9 @@
 import React from 'react';
 
-class ForgetPasswordComponent extends React.Component {
+class ForgetPassword extends React.Component {
   render() {
     return null;
   }
 }
 
-export default ForgetPasswordComponent;
+export default ForgetPassword;

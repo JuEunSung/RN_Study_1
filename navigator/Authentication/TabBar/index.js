@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
 import { use } from '../../../context';
 
@@ -46,7 +46,7 @@ class TabBar extends React.Component {
           };
 
           return (
-            <TouchableOpacity
+            <Pressable
               key={route.name}
               activeOpacity={0.9}
               accessibilityRole="button"
@@ -57,7 +57,7 @@ class TabBar extends React.Component {
               onLongPress={onLongPress}
               style={style.tabbarItem}>
               <TabBarIcon data={data} />
-            </TouchableOpacity>
+            </Pressable>
           );
         })}
       </View>

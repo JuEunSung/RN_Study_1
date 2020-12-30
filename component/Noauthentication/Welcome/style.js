@@ -1,13 +1,13 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
+import { MAIN_BACKGROUND_COLOR, MAIN_TEXT_COLOR } from '../../../constant';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: MAIN_BACKGROUND_COLOR,
   },
   titleWrapper: {
     height: hp('40%'),
@@ -16,12 +16,12 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    color: '#eee',
-    fontSize: 90,
+    color: MAIN_TEXT_COLOR,
+    fontSize: hp('10%'),
   },
   subtitle: {
-    color: '#eee',
-    fontSize: 18,
+    color: MAIN_TEXT_COLOR,
+    fontSize: hp('2.3%'),
     marginTop: 15,
   },
   buttonWrapper: {
@@ -34,13 +34,13 @@ export default StyleSheet.create({
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#eee',
+    backgroundColor: MAIN_TEXT_COLOR,
     borderRadius: 11,
   },
   signinButtonText: {
-    fontSize: 24,
+    fontSize: hp('3%'),
     fontWeight: 'bold',
-    color: '#41BD40',
+    color: MAIN_BACKGROUND_COLOR,
   },
   signupButton: {
     marginTop: 25,
@@ -48,13 +48,13 @@ export default StyleSheet.create({
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#eee',
+    backgroundColor: MAIN_TEXT_COLOR,
     borderRadius: 11,
   },
   signupButtonText: {
-    fontSize: 24,
+    fontSize: hp('3%'),
     fontWeight: 'bold',
-    color: '#41BD40',
+    color: MAIN_BACKGROUND_COLOR,
   },
   infoWrapper: {
     flexDirection: 'row',
@@ -68,7 +68,8 @@ export default StyleSheet.create({
   infoText: {
     width: wp('55%'),
     marginLeft: 5,
-    color: '#eee',
+    color: MAIN_TEXT_COLOR,
     textAlign: 'center',
+    fontSize: hp('1.6%'),
   },
 });

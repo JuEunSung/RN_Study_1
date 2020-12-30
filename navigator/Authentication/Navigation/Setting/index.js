@@ -1,10 +1,10 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { Pressable } from 'react-native';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import { MENU } from '../../../../constant';
+import { MENU, MAIN_TEXT_COLOR } from '../../../../constant';
 import { use } from '../../../../context';
 
 import Setting from '../../../../component/Authentication/Setting';
@@ -25,14 +25,14 @@ class SettingNavigation extends React.Component {
             }
 
             return (
-              <TouchableOpacity
+              <Pressable
                 activeOpacity={0.9}
                 style={style.icon_back}
                 onPress={() => {
                   this.props.$navigation.pop();
                 }}>
-                <Ionicons name="ios-arrow-round-back" size={30} />
-              </TouchableOpacity>
+                <Ionicons name="chevron-back" size={30} color={MAIN_TEXT_COLOR} />
+              </Pressable>
             );
           },
           headerTitleAlign: 'center',

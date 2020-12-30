@@ -1,4 +1,6 @@
 export const API_URL = '';
+export const MAIN_BACKGROUND_COLOR = '#52B669';
+export const MAIN_TEXT_COLOR = '#EEEEEE';
 export const MENU = {
   AUTHENTICATION: {
     TAB: {
@@ -17,9 +19,11 @@ export const MENU = {
     },
   },
   NOAUTHENTICATION: {
-    FORGET_PASSWORD: '비밀번호 찾기',
-    WELCOME: '환영',
-    SIGNIN: '로그인',
-    SIGNUP: '회원가입',
+    STACK: {
+      FORGET_PASSWORD: '비밀번호 찾기',
+      WELCOME: '환영',
+      SIGNIN: '로그인',
+      SIGNUP: '회원가입',
+    },
   },
 };
