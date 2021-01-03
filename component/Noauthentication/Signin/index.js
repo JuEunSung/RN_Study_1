@@ -9,6 +9,13 @@ import { use } from '../../../context';
 import style from './style';
 
 class Signin extends React.Component {
+  valid_m_username = false;
+
+  state = {
+    m_username: '',
+    m_password: '',
+  };
+
   render() {
     return (
       <View style={style.container}>
@@ -22,8 +29,16 @@ class Signin extends React.Component {
                 validationText="올바른 이메일을 입력하세요"
                 checkValidation={(text) => {
                   const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                  const result = regex.test(text);
 
-                  return regex.test(text);
+                  this.valid_m_username = result;
+
+                  return result;
+                }}
+                onChangeText={(text) => {
+                  this.setState({
+                    m_username: text,
+                  });
                 }}
               />
             </View>
@@ -34,6 +49,11 @@ class Signin extends React.Component {
                 isRequire={true}
                 requireText="비밀번호를 입력해주세요"
                 validationText="올바른 비밀번호을 입력하세요"
+                onChangeText={(text) => {
+                  this.setState({
+                    m_password: text,
+                  });
+                }}
               />
             </View>
           </View>
@@ -46,18 +66,28 @@ class Signin extends React.Component {
               <Text style={style.forgetPasswordText}>비밀번호 찾기</Text>
             </Pressable>
           </View>
-          <View style={style.loginButtonWrapper}>
+          <View style={style.signinButtonWrapper}>
             <Pressable
-              style={style.loginButton}
+              style={[style.signinButton, this.canSignin() ? {} : style.disableSigninButton]}
               onPress={() => {
-                this.props.$action.memberToken('test');
-              }}>
-              <Text style={style.loginButtonText}>확인</Text>
+                const { m_username, m_password } = this.state;
+
+                // 로그인 API 호출
+                // ...
+
+                this.props.$action.memberToken('MEMBER_TOKEN');
+              }}
+              disabled={!this.canSignin()}>
+              <Text style={style.signinButtonText}>확인</Text>
             </Pressable>
           </View>
         </View>
       </View>
     );
+  }
+
+  canSignin() {
+    return this.valid_m_username && this.state.m_username && this.state.m_password;
   }
 }
 

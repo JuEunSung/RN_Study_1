@@ -28,12 +28,12 @@ export default StyleSheet.create({
     color: MAIN_TEXT_COLOR,
     fontSize: hp('2%'),
   },
-  loginButtonWrapper: {
+  signinButtonWrapper: {
     width: '100%',
     alignItems: 'center',
     marginTop: hp('6%'),
   },
-  loginButton: {
+  signinButton: {
     width: wp('80%'),
     height: 60,
     backgroundColor: MAIN_TEXT_COLOR,
@@ -41,7 +41,10 @@ export default StyleSheet.create({
     alignItems: 'center',
     borderRadius: 11,
   },
-  loginButtonText: {
+  disableSigninButton: {
+    opacity: 0.4,
+  },
+  signinButtonText: {
     color: MAIN_BACKGROUND_COLOR,
     fontSize: hp('2.5%'),
     fontWeight: 'bold',

@@ -23,7 +23,7 @@ import style from './style';
  */
 class TextInput extends React.Component {
   state = {
-    inputFlag: false,
+    firstInputFlag: false,
     text: '',
   };
 
@@ -35,15 +35,16 @@ class TextInput extends React.Component {
         </Text>
         <View style={style.textInputWrapper}>
           <Input
-            textContentType={this.props.textContentType || 'none'}
+            // textContentType={this.props.textContentType || 'none'}
+            textContentType="oneTimeCode"
             keyboardType={this.props.keyboardType || 'default'}
-            secureTextEntry={this.props.textContentType === 'password'}
+            secureTextEntry={this.props.textContentType === 'password' || this.props.textContentType === 'newPassword'}
             style={style.textInput}
             value={this.state.text}
             onChangeText={(text) => {
               this.setState(
                 {
-                  inputFlag: true,
+                  firstInputFlag: true,
                   text,
                 },
                 () => {
@@ -95,7 +96,7 @@ class TextInput extends React.Component {
       return false;
     }
 
-    return this.state.inputFlag && !this.state.text;
+    return this.state.firstInputFlag && !this.state.text;
   }
 
   isNotValid() {
@@ -107,7 +108,7 @@ class TextInput extends React.Component {
       return false;
     }
 
-    return this.state.inputFlag && this.state.text && !checkValidation(this.state.text);
+    return this.state.firstInputFlag && this.state.text && !checkValidation(this.state.text);
   }
 }
 
